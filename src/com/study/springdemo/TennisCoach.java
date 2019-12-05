@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 @Component("thatSillyCoach")  //if do not set "thatSillCoach", it will use tennisCoach as default bean ID"
 public class TennisCoach implements Coach {
 	
+	@Autowired
 	private FortuneService fortuneService;
 	
 	
@@ -13,12 +14,7 @@ public class TennisCoach implements Coach {
 	public TennisCoach() {
 		System.out.println(">> TennisCoach:inside default constructor");
 	}
-	//define a setter method
-	@Autowired
-	public void doSomeCrazyStuff(FortuneService theFortuneService) {
-		System.out.println(">> TennisCoach:inside doSomeCrazyStuff");
-		fortuneService = theFortuneService;
-	}
+
 	@Override
 	public String getDailyWorkout() {
 
