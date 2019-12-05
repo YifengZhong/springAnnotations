@@ -1,12 +1,14 @@
 package com.study.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("thatSillyCoach")  //if do not set "thatSillCoach", it will use tennisCoach as default bean ID"
 public class TennisCoach implements Coach {
 	
 	@Autowired
+	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 	
 	
